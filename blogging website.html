@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>CineVerse | Hollywood Movie Blog</title>
+
+    <link rel="stylesheet"
+          href="blogging website.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+                Cine<span>Verse</span>
+            </div>
+
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a href="#movies">Movies</a>
+                </li>
+
+                <li>
+                    <a href="#favorites">Favorites</a>
+                </li>
+
+                <li>
+                    <a href="#blog">Blog</a>
+                </li>
+
+            </ul>
+
+
+            <button id="themeBtn">
+                ☀
+            </button>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero"
+             id="home">
+
+        <div class="hero-content">
+
+            <p class="small-title">
+                WELCOME TO CINEVERSE
+            </p>
+
+
+            <h1>
+
+                My Favorite
+
+                <br>
+
+                <span>Hollywood Movies</span>
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                Explore my collection of favorite Hollywood
+                movies, personal thoughts, memorable stories,
+                and cinematic experiences.
+
+            </p>
+
+
+            <a href="#movies"
+               class="hero-btn">
+
+                Explore Movies
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= MOVIES ================= -->
+
+    <section class="movies-section"
+             id="movies">
+
+
+        <div class="section-heading">
+
+
+            <div>
+
+                <p class="small-title">
+                    MY COLLECTION
+                </p>
+
+                <h2>
+                    Favorite Movies
+                </h2>
+
+            </div>
+
+
+
+            <div class="controls">
+
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search movies..."
+                >
+
+
+                <select id="genreFilter">
+
+                    <option value="all">
+                        All Genres
+                    </option>
+
+                    <option value="Action">
+                        Action
+                    </option>
+
+                    <option value="Sci-Fi">
+                        Sci-Fi
+                    </option>
+
+                    <option value="Drama">
+                        Drama
+                    </option>
+
+                    <option value="Romance">
+                        Romance
+                    </option>
+
+                    <option value="Adventure">
+                        Adventure
+                    </option>
+
+                </select>
+
+
+            </div>
+
+        </div>
+
+
+
+        <div class="movie-grid"
+             id="movieGrid">
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ================= FAVORITES ================= -->
+
+    <section class="favorites-section"
+             id="favorites">
+
+
+        <div class="section-heading">
+
+            <div>
+
+                <p class="small-title">
+                    YOUR PICKS
+                </p>
+
+                <h2>
+                    My Favorites
+                </h2>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="movie-grid"
+             id="favoriteGrid">
+
+            <p class="empty-message">
+                No favorite movies yet.
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ================= BLOG ================= -->
+
+    <section class="blog-section"
+             id="blog">
+
+
+        <div class="section-heading">
+
+            <div>
+
+                <p class="small-title">
+                    CINEMATIC STORIES
+                </p>
+
+                <h2>
+                    Movie Blogs
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="blog-grid"
+             id="blogGrid">
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+
+        <div class="footer-logo">
+
+            Cine<span>Verse</span>
+
+        </div>
+
+
+        <p>
+
+            My personal space for Hollywood movies,
+            reviews and cinematic memories.
+
+        </p>
+
+
+        <p class="copyright">
+
+            © 2026 CineVerse.
+            Made with HTML, CSS & JavaScript.
+
+        </p>
+
+
+    </footer>
+
+
+
+    <!-- ================= BLOG MODAL ================= -->
+
+    <div class="modal"
+         id="movieModal">
+
+
+        <div class="modal-content">
+
+
+            <button class="close-btn"
+                    id="closeModal">
+
+                &times;
+
+            </button>
+
+
+
+            <img id="modalImage"
+                 src=""
+                 alt="Movie Poster">
+
+
+
+            <div class="modal-info">
+
+
+                <p id="modalGenre"></p>
+
+
+                <h2 id="modalTitle"></h2>
+
+
+                <p id="modalYear"></p>
+
+
+                <p id="modalDescription"></p>
+
+
+                <div class="blog-text"
+                     id="modalBlog">
+
+                </div>
+
+
+                <button id="modalFavorite"
+                        class="favorite-btn">
+
+                    Add to Favorites
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <script src="blogging website.js"></script>
+
+
+</body>
+
+</html>

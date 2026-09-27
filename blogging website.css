@@ -1,0 +1,977 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #090909;
+    color: #ffffff;
+    line-height: 1.6;
+    transition: 0.3s;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    background: rgba(5, 5, 5, 0.92);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid #222;
+}
+
+.navbar {
+    max-width: 1200px;
+    height: 75px;
+    margin: auto;
+    padding: 0 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.logo span {
+    color: #e50914;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ddd;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #e50914;
+}
+
+#themeBtn {
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #1d1d1d;
+    color: white;
+
+    font-size: 18px;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 100px 8%;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.95),
+            rgba(0, 0, 0, 0.65),
+            rgba(0, 0, 0, 0.35)
+        ),
+
+        url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=2000&q=80");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.small-title {
+    color: #e50914;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 12px;
+}
+
+.hero h1 {
+    font-size: clamp(50px, 7vw, 90px);
+
+    line-height: 0.95;
+
+    margin: 15px 0 25px;
+}
+
+.hero h1 span {
+    color: #e50914;
+}
+
+.hero-description {
+    max-width: 550px;
+
+    color: #ccc;
+
+    font-size: 18px;
+
+    margin-bottom: 30px;
+}
+
+.hero-btn {
+    display: inline-block;
+
+    background: #e50914;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 14px 28px;
+
+    border-radius: 5px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: #ff2834;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+   COMMON SECTIONS
+========================================= */
+
+.movies-section,
+.favorites-section,
+.blog-section {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 100px 25px;
+}
+
+.favorites-section {
+    border-top: 1px solid #1c1c1c;
+}
+
+.section-heading {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    gap: 20px;
+
+    margin-bottom: 40px;
+}
+
+.section-heading h2 {
+    font-size: 42px;
+}
+
+
+/* =========================================
+   SEARCH AND FILTER
+========================================= */
+
+.controls {
+    display: flex;
+
+    gap: 10px;
+}
+
+.controls input,
+.controls select {
+    background: #151515;
+
+    border: 1px solid #333;
+
+    color: white;
+
+    padding: 12px 15px;
+
+    border-radius: 5px;
+
+    outline: none;
+
+    font-size: 14px;
+}
+
+.controls input {
+    width: 220px;
+}
+
+.controls input:focus,
+.controls select:focus {
+    border-color: #e50914;
+}
+
+.controls input::placeholder {
+    color: #777;
+}
+
+
+/* =========================================
+   MOVIE GRID
+========================================= */
+
+.movie-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+
+/* =========================================
+   MOVIE CARD
+========================================= */
+
+.movie-card {
+    background: #131313;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    border: 1px solid #222;
+
+    transition: 0.3s;
+}
+
+.movie-card:hover {
+    transform: translateY(-8px);
+
+    border-color: #e50914;
+
+    box-shadow:
+        0 15px 35px
+        rgba(0, 0, 0, 0.5);
+}
+
+
+/* =========================================
+   MOVIE IMAGE
+========================================= */
+
+.movie-image {
+    width: 100%;
+
+    height: 360px;
+
+    object-fit: cover;
+
+    display: block;
+
+    background: #111;
+}
+
+
+/* =========================================
+   MOVIE INFORMATION
+========================================= */
+
+.movie-info {
+    padding: 18px;
+}
+
+.movie-info h3 {
+    font-size: 21px;
+
+    margin-bottom: 5px;
+}
+
+.movie-meta {
+    color: #999;
+
+    font-size: 14px;
+
+    margin-bottom: 12px;
+}
+
+.movie-description {
+    color: #aaa;
+
+    font-size: 14px;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================================
+   CARD BUTTONS
+========================================= */
+
+.card-actions {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+.details-btn {
+    background: transparent;
+
+    color: white;
+
+    border: 1px solid #444;
+
+    padding: 8px 12px;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+.details-btn:hover {
+    background: #e50914;
+
+    border-color: #e50914;
+
+    color: white;
+}
+
+.fav-btn {
+    background: transparent;
+
+    border: none;
+
+    color: #777;
+
+    font-size: 23px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.fav-btn:hover {
+    transform: scale(1.2);
+}
+
+.fav-btn.active {
+    color: #e50914;
+}
+
+
+/* =========================================
+   BLOG SECTION
+========================================= */
+
+.blog-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+.blog-card {
+    background: #131313;
+
+    border: 1px solid #222;
+
+    padding: 30px;
+
+    border-radius: 10px;
+
+    transition: 0.3s;
+}
+
+.blog-card:hover {
+    border-color: #e50914;
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.35);
+}
+
+.blog-number {
+    color: #e50914;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    margin-bottom: 15px;
+}
+
+.blog-card h3 {
+    font-size: 26px;
+
+    margin-bottom: 12px;
+}
+
+.blog-card p {
+    color: #aaa;
+
+    margin-bottom: 20px;
+}
+
+.blog-card span {
+    color: #777;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   MODAL
+========================================= */
+
+.modal {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 2000;
+
+    background: rgba(0, 0, 0, 0.88);
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    position: relative;
+
+    max-width: 950px;
+
+    width: 100%;
+
+    max-height: 90vh;
+
+    background: #151515;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    display: flex;
+
+    border: 1px solid #333;
+}
+
+.modal-content img {
+    width: 40%;
+
+    object-fit: cover;
+}
+
+.modal-info {
+    padding: 40px;
+
+    flex: 1;
+
+    overflow-y: auto;
+}
+
+.modal-info h2 {
+    font-size: 38px;
+
+    margin: 8px 0;
+}
+
+.modal-info > p {
+    color: #aaa;
+
+    margin-bottom: 15px;
+}
+
+#modalGenre {
+    color: #e50914;
+
+    font-weight: bold;
+}
+
+.blog-text {
+    color: #ccc;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    margin: 25px 0;
+}
+
+.close-btn {
+    position: absolute;
+
+    right: 15px;
+
+    top: 10px;
+
+    z-index: 5;
+
+    background: rgba(0, 0, 0, 0.7);
+
+    border: none;
+
+    color: white;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    width: 40px;
+
+    height: 40px;
+
+    border-radius: 50%;
+}
+
+.favorite-btn {
+    background: #e50914;
+
+    border: none;
+
+    color: white;
+
+    padding: 13px 20px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.favorite-btn:hover {
+    background: #ff2834;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    text-align: center;
+
+    padding: 60px 20px;
+
+    background: #050505;
+
+    border-top: 1px solid #222;
+}
+
+.footer-logo {
+    font-size: 27px;
+
+    font-weight: 800;
+}
+
+.footer-logo span {
+    color: #e50914;
+}
+
+footer p {
+    color: #777;
+
+    margin-top: 10px;
+}
+
+.copyright {
+    font-size: 13px;
+
+    margin-top: 30px !important;
+}
+
+
+/* =========================================
+   LIGHT MODE
+========================================= */
+
+body.light {
+    background: #f5f5f5;
+
+    color: #111111;
+}
+
+
+/* NAVBAR */
+
+body.light header {
+    background: rgba(255, 255, 255, 0.95);
+
+    border-bottom: 1px solid #dddddd;
+}
+
+body.light .logo {
+    color: #111111;
+}
+
+body.light .nav-links a {
+    color: #333333;
+}
+
+body.light .nav-links a:hover {
+    color: #e50914;
+}
+
+body.light #themeBtn {
+    background: #eeeeee;
+
+    color: #111111;
+}
+
+
+/* SECTIONS */
+
+body.light .favorites-section {
+    border-top: 1px solid #dddddd;
+}
+
+
+/* MOVIE CARDS */
+
+body.light .movie-card {
+    background: #ffffff;
+
+    border: 1px solid #dddddd;
+
+    box-shadow:
+        0 5px 15px
+        rgba(0, 0, 0, 0.08);
+}
+
+body.light .movie-card:hover {
+    border-color: #e50914;
+
+    box-shadow:
+        0 10px 25px
+        rgba(0, 0, 0, 0.15);
+}
+
+
+/* MOVIE TEXT */
+
+body.light .movie-info h3 {
+    color: #111111;
+}
+
+body.light .movie-meta {
+    color: #777777;
+}
+
+body.light .movie-description {
+    color: #555555;
+}
+
+
+/* READ BLOG BUTTON */
+
+body.light .details-btn {
+    color: #111111;
+
+    background: #ffffff;
+
+    border: 1px solid #999999;
+}
+
+body.light .details-btn:hover {
+    color: #ffffff;
+
+    background: #e50914;
+
+    border-color: #e50914;
+}
+
+
+/* FAVORITE HEART */
+
+body.light .fav-btn {
+    color: #777777;
+}
+
+body.light .fav-btn.active {
+    color: #e50914;
+}
+
+
+/* SEARCH */
+
+body.light .controls input,
+body.light .controls select {
+    background: #ffffff;
+
+    color: #111111;
+
+    border: 1px solid #cccccc;
+}
+
+body.light .controls input::placeholder {
+    color: #777777;
+}
+
+
+/* BLOG CARDS */
+
+body.light .blog-card {
+    background: #ffffff;
+
+    border: 1px solid #dddddd;
+
+    box-shadow:
+        0 5px 15px
+        rgba(0, 0, 0, 0.08);
+}
+
+body.light .blog-card:hover {
+    border-color: #e50914;
+}
+
+body.light .blog-card h3 {
+    color: #111111;
+}
+
+body.light .blog-card p {
+    color: #555555;
+}
+
+body.light .blog-card span {
+    color: #777777;
+}
+
+
+/* MODAL */
+
+body.light .modal-content {
+    background: #ffffff;
+
+    border: 1px solid #dddddd;
+}
+
+body.light .modal-info h2 {
+    color: #111111;
+}
+
+body.light .modal-info > p {
+    color: #555555;
+}
+
+body.light .blog-text {
+    color: #444444;
+}
+
+
+/* MODAL CLOSE BUTTON */
+
+body.light .close-btn {
+    background: #eeeeee;
+
+    color: #111111;
+}
+
+
+/* FOOTER */
+
+body.light footer {
+    background: #eeeeee;
+
+    border-top: 1px solid #dddddd;
+}
+
+body.light .footer-logo {
+    color: #111111;
+}
+
+body.light footer p {
+    color: #666666;
+}
+
+
+/* =========================================
+   EMPTY MESSAGE
+========================================= */
+
+.empty-message {
+    color: #888;
+
+    font-size: 16px;
+
+    padding: 20px 0;
+}
+
+body.light .empty-message {
+    color: #666;
+}
+
+
+/* =========================================
+   RESPONSIVE - TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .movie-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE - MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        padding: 0 15px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .section-heading {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .controls {
+        width: 100%;
+
+        flex-direction: column;
+    }
+
+    .controls input {
+        width: 100%;
+    }
+
+    .movie-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .movie-image {
+        height: 400px;
+    }
+
+    .modal-content {
+        flex-direction: column;
+
+        max-height: 90vh;
+
+        overflow-y: auto;
+    }
+
+    .modal-content img {
+        width: 100%;
+
+        height: 300px;
+    }
+
+    .modal-info {
+        padding: 25px;
+    }
+
+    .modal-info h2 {
+        font-size: 30px;
+    }
+
+    .hero {
+        padding: 100px 25px;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+    }
+
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .section-heading h2 {
+        font-size: 32px;
+    }
+
+    .movie-image {
+        height: 350px;
+    }
+
+}
